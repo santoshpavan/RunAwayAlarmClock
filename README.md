@@ -6,3 +6,7 @@
 5. It displays the time on LCD and the user can set the alarm using the same LCD, and a few push buttons that on-board.
 6. When the user goes to snooze the alarm, the capactive sensor detects the user's hand and tells the robot to run.
 7. Using the Ultrasonic Sensor present in the front, it starts running anywhere trying to avoid the user, without crashing into anything.
+
+Note:
+Arduino1Code File contains the code for the implementation of the Clock and the Alarm Units.
+Arduino2Code File contains the code for the usage of Ultra Sonic Sensor and Capacitive Sensor.
