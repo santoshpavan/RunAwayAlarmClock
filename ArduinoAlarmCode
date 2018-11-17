@@ -130,116 +130,65 @@ void loop()
 		lcd.print("Enter ALARM");
 		k=getalarm('i'); //hours
 		l=getalarm('j'); //mins
-		while(1)
-     
-		{  
-       
-			lcd.setCursor(0,0);
-       
-			lcd.print("ALARM= ");
-       
-			lcd.print(l);
-       
-			lcd.print(":");
-       
+		while(1)     
+		{         
+			lcd.setCursor(0,0);       
+			lcd.print("ALARM= ");       
+			lcd.print(l);       
+			lcd.print(":");       
 			lcd.print(k);
        
-			if(digitalRead(3)==HIGH) //green
-       
-			{
-         
-				delay(1000);
-         
-				break;
-       
-			}
-     
+			if(digitalRead(3)==HIGH) //green       
+			{         
+				delay(1000);         
+				break;       
+			}     
 		}
-     
 		delay(1000);
-   
 	}
      
-	
 	if(hours==k)
-     
 	{
-       
 		if(minutes==l)
-       
 		{
-         
 			while(1)
 			{
-         
 				digitalWrite(7,HIGH); //buzzer
-         
 				if(digitalRead(5)==HIGH)
-         
 				{
-           
 					digitalWrite(7,LOW);
-           
 					break;
-         
 				}
-         
 			} 
-       
 		}
-     
 	}
- 
 }
 
-
-
 int getvalue(char k)
-
 {
-  
 	digitalWrite(6,HIGH); //yellow
-  
 	delay(1000);
-  
-	digitalWrite(6,LOW);
-  
-	
-	if(k=='z') //month
-  
-	{
-    
-		lcd.clear();
-    
-		lcd.print("Enter the month");
-    
-		t=0;
-    
-		s=getit(t);
-    
-		if(s>12)
-    
+	digitalWrite(6,LOW);	
+	if(k=='z') //month  
+	{    
+		lcd.clear();    
+		lcd.print("Enter the month");    
+		t=0;    
+		s=getit(t);    
+		if(s>12)    
 		{
 			s=s-12;
 		}
-    
-		lcd.clear();
-    
-		return s;
-  
-	}
-  
+		
+		lcd.clear();    
+		return s;  
+	}  
 	
-	if(k=='y') //dates
-  
-	{
-    
-		lcd.clear();
-    
-		lcd.print("Enter the date");
-    
-		t=0;
-    
+	if(k=='y') //dates  
+	{    
+		lcd.clear();    
+		lcd.print("Enter the date");    
+		t=0;    
 		s=getit(t);
   	
 		if(a==2)
@@ -250,8 +199,7 @@ int getvalue(char k)
 			}
 		}
 		
-		if(a==1||a==3||a==5||a==7||a==8||a==10||a==12)
-    
+		if(a==1||a==3||a==5||a==7||a==8||a==10||a==12)    
 		{
 			if(s>31)
 			{
